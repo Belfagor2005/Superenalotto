@@ -69,11 +69,14 @@ jobs:
             --retry-empty $AGGRESSIVE_FLAG
 
       - name: Pull latest changes
-        run: git pull --rebase origin main
-
+        run: |
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
+      
       - name: Commit e push
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add vincite.json
           git diff --cached --quiet || git commit -m "Fix vincite ${{ github.event.inputs.dates }} [skip ci]"

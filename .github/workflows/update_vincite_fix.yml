@@ -68,6 +68,9 @@ jobs:
             --to-year $TO_YEAR \
             --retry-empty $AGGRESSIVE_FLAG
 
+      - name: Pull latest changes
+        run: git pull --rebase origin main
+
       - name: Commit e push
         run: |
           git config user.name  "github-actions[bot]"

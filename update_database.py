@@ -11,7 +11,7 @@ from datetime import datetime, date
 from html.parser import HTMLParser
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
-GITHUB_REPO  = 'delpinsky/Superenalotto'
+GITHUB_REPO  = 'Belfagor2005/Superenalotto'
 JSON_FILE    = 'storico-estrazioni-superenalotto.json'
 GITHUB_API   = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{JSON_FILE}'
 BASE_URL     = 'https://www.superenalotto.com/archivio/estrazioni'
